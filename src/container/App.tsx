@@ -44,12 +44,23 @@ const App = () => {
     });
   };
 
+  const allDelete = () => {
+    setIngredients((prevState) => {
+      return prevState.map(item => ({...item, count: 0}));
+    });
+  };
+
   console.log(ingredients);
 
   return (
     <div className='container'>
       <div className="clientInterface">
-        <ClientForm onAdd={addIngredient} onDelete={deleteIngredient} counts={ingredients}/>
+        <ClientForm
+          onAdd={addIngredient}
+          onDelete={deleteIngredient}
+          counts={ingredients}
+          onAllDelete={allDelete}
+        />
         <Burger stuff={ingredients}/>
       </div>
     </div>

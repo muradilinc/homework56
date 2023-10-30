@@ -6,28 +6,29 @@ interface Props {
 }
 
 const Burger: React.FC<Props> = ({stuff}) => {
-  const igArr: React.ReactElement[] = [];
+  const ingredients: React.ReactElement[] = [];
+
   stuff.forEach(stuff => {
     const stuffName = stuff.name.charAt(0).toUpperCase() + stuff.name.slice(1);
     switch (stuffName){
       case 'Salad':
         for (let i = 0; i < stuff.count; i++){
-          igArr.push(<div className="Salad"></div>);
+          ingredients.push(<div className="Salad"></div>);
         }
         return null;
       case 'Cheese':
         for (let i = 0; i < stuff.count; i++){
-          igArr.push(<div className="Cheese"></div>);
+          ingredients.push(<div className="Cheese"></div>);
         }
         return null;
       case 'Meat':
         for (let i = 0; i < stuff.count; i++){
-          igArr.push(<div className="Meat"></div>);
+          ingredients.push(<div className="Meat"></div>);
         }
         return null;
       case 'Bacon':
         for (let i = 0; i < stuff.count; i++){
-          igArr.push(<div className="Bacon"></div>);
+          ingredients.push(<div className="Bacon"></div>);
         }
         return null;
       default:
@@ -42,7 +43,7 @@ const Burger: React.FC<Props> = ({stuff}) => {
         <div className="Seeds2"></div>
       </div>
       {
-        igArr.map(item => item)
+        ingredients.map(item => item)
       }
       <div className="BreadBottom"></div>
     </div>

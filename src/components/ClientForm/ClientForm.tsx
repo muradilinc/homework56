@@ -6,10 +6,11 @@ import './ClientForm.css';
 interface Props {
   onAdd: (ingredient: Ingredients) => void;
   onDelete: (ingredient: Ingredients) => void;
+  onAllDelete: () => void;
   counts: IngredientState[];
 }
 
-const ClientForm: React.FC<Props> = ({onAdd, counts, onDelete}) => {
+const ClientForm: React.FC<Props> = ({onAdd, counts, onDelete, onAllDelete}) => {
   const commonIngredient = INGREDIENTS.reduce((acc: Ingredients[], item, index) => {
     acc.push({...item, count: counts[index].count});
     return acc;
@@ -23,14 +24,15 @@ const ClientForm: React.FC<Props> = ({onAdd, counts, onDelete}) => {
             <div className='ingredientBlock'>
               <div key={index} className="formIngredient" onClick={() => onAdd(ingredient)}>
                 <img src={ingredient.image} alt="ingredient"/>
-                <p>{ingredient.name} ({ingredient.price} сом)</p>
-                <p>{ingredient.count}</p>
+                <p>{ingredient.name.charAt(0).toUpperCase() + ingredient.name.slice(1)} ({ingredient.price} сом)</p>
+                <p>x{ingredient.count}</p>
               </div>
               <button onClick={() => onDelete(ingredient)}><Trash size={24}/></button>
             </div>
           );
         })
       }
+      <button onClick={onAllDelete}>All delete</button>
     </div>
   );
 };
