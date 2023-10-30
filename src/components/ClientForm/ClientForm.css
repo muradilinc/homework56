@@ -1,0 +1,18 @@
+.clientForm {
+  border: 2px solid red;
+}
+.formIngredient {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.formIngredient p {
+  margin-left: 30px;
+}
+
+.formIngredient img {
+  max-width: 100%;
+  height: auto;
+  width: 150px;
+}

@@ -3,11 +3,11 @@ import cheeseImage from '../assets/cheese.png';
 import cabbageImage from '../assets/cabbage.png';
 import beaconImage from '../assets/bacon.png';
 
-const INGREDIENTS: Ingredients[] = [
+export const INGREDIENTS: Ingredients[] = [
   {
     name: 'meat',
     price: 80,
-    image: meatImage
+    image: meatImage,
   },
   {
     name: 'cheese',
@@ -21,7 +21,7 @@ const INGREDIENTS: Ingredients[] = [
   },
   {
     name: 'beacon',
-    price: 50,
+    price: 60,
     image: beaconImage
   },
 ];
