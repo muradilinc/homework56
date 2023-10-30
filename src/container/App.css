@@ -6,6 +6,6 @@
 
 .clientInterface{
   display: flex;
-  border: 1px solid red;
+  border: 1px solid #1a1a1a;
   align-items: center;
 }

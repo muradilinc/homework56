@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import Burger from '../components/Burger/Burger.tsx';
-import './App.css';
 import ClientForm from '../components/ClientForm/ClientForm.tsx';
+import './App.css';
 
 
 const App = () => {
@@ -19,7 +19,6 @@ const App = () => {
         if (copyIngredient.name === ingredient.name) {
           copyIngredient.count = copyIngredient.count + 1;
         }
-
         return copyIngredient;
       });
     });
@@ -36,9 +35,6 @@ const App = () => {
             copyItem.count = copyItem.count - 1;
           }
         }
-
-        console.log(copyItem);
-
         return copyItem;
       });
     });
@@ -49,8 +45,6 @@ const App = () => {
       return prevState.map(item => ({...item, count: 0}));
     });
   };
-
-  console.log(ingredients);
 
   return (
     <div className='container'>

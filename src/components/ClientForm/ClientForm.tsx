@@ -11,10 +11,9 @@ interface Props {
 }
 
 const ClientForm: React.FC<Props> = ({onAdd, counts, onDelete, onAllDelete}) => {
-  const commonIngredient = INGREDIENTS.reduce((acc: Ingredients[], item, index) => {
-    acc.push({...item, count: counts[index].count});
-    return acc;
-  }, []);
+  const commonIngredient: Ingredients[] = INGREDIENTS.map((item, index) => {
+    return  {...item, count: counts[index].count};
+  });
 
   return (
     <div className="clientForm">
@@ -32,7 +31,7 @@ const ClientForm: React.FC<Props> = ({onAdd, counts, onDelete, onAllDelete}) => 
           );
         })
       }
-      <button onClick={onAllDelete}>All delete</button>
+      <button className='removeButton' onClick={onAllDelete}>All delete</button>
     </div>
   );
 };
