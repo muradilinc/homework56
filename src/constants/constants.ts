@@ -20,7 +20,7 @@ export const INGREDIENTS: Ingredients[] = [
     image: cabbageImage
   },
   {
-    name: 'beacon',
+    name: 'bacon',
     price: 60,
     image: beaconImage
   },
